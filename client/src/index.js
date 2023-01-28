@@ -8,7 +8,9 @@ import {loadStripe} from '@stripe/stripe-js'
 
 (async () => {
   const {publishableKey} = await fetch('/config').then(r => r.json())
+  // console.log(publishableKey)
   const stripePromise = loadStripe(publishableKey)
+  // console.log(stripePromise);
 
   ReactDOM.render(
     <React.StrictMode>
@@ -16,7 +18,6 @@ import {loadStripe} from '@stripe/stripe-js'
         <App />
       </Elements>
 
-{/* <h1>Hi Stripe Devs!</h1> */}
 
     </React.StrictMode>,
     document.getElementById('root')
